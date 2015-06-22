@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Questions</h1>
+
+
+<div>
+<ol>  
+  <% @questions.each do |question| %>
+    <li><%= question.description.truncate(100) %></li><br/>
+    <h3>Answers: </h3>
+    <ol>
+      <% question.answers.each do |answer| %>
+        <li><%= answer.description %></li>
+      <% end %>
+    </ol>
+    <span><%= link_to 'Show', question %></span>
+    <span><%= link_to 'Edit', edit_question_path(question) %></span>
+    <span><%= link_to 'Delete', question, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+    <hr/>
+  <% end %>
+</ol>
+
+<br>
+
+<%= link_to 'New Question', new_question_path %>
