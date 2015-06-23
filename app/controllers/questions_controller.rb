@@ -1,7 +1,7 @@
 class QuestionsController < ApplicationController
 
   def index
-    @questions = Question.includes(:answers)
+    @questions = Question.includes(:answers).page(params[:page]).per(5)
   end
 
   def new
