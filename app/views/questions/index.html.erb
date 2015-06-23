@@ -6,7 +6,7 @@
 <div>
 <ol>  
   <% @questions.each do |question| %>
-    <li><%= question.description %></li>
+    <li class="question-text"><%= question.description %></li>
     <h4>Options: </h4>
     <ol>
       <% question.answers.each do |answer| %>
